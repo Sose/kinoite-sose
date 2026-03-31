@@ -9,6 +9,9 @@ jobs:
   build:
     name: Build Fedora bootc image
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     env:
       IMAGE_NAME: ${{ github.repository }}
       REGISTRY: ghcr.io
