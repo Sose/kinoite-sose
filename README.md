@@ -1,3 +1,6 @@
 # Custom Fedora Kinoite bootc image
 
-To be written
+## Build locally
+```bash
+podman build -t kinoite-sose .
+```
