@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: "23 3 * * *"
 
 jobs:
   build:
@@ -33,6 +35,8 @@ jobs:
             ${{ github.sha }}
           containerfiles: |
             ./Containerfile
+          extra-args: |
+            --pull=always
 
       - name: Log in to GHCR
         uses: redhat-actions/podman-login@v1
