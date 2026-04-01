@@ -12,6 +12,7 @@ RUN dnf -y remove firefox firefox-langpacks \
     && dnf config-manager setopt rpmfusion-nonfree-updates.enabled=1 \
     && dnf config-manager setopt rpmfusion-free-updates-testing.enabled=0 \
     && dnf config-manager setopt rpmfusion-nonfree-updates-testing.enabled=0 \
+    && dnf swap -y ffmpeg-free ffmpeg --allowerasing \ 
     && dnf clean all
 
 CMD ["/sbin/init"]
